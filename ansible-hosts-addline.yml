@@ -7,8 +7,8 @@
           {{ item.ip }} {{ item.name }} {{ item.shortname }}
         marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.ip }}"
       with_items:
-        - { name: host1name, shortname: host1, ip: 10.215.255.25 }
-        - { name: host1name, shortname: host1 , ip: 10.215.255.26 }
-        - { name: host1name, shortname: host1 , ip: 10.215.255.27 }
+        - { name: host1name, shortname: host1, ip: 10.0.255.25 }
+        - { name: host1name, shortname: host1 , ip: 10.0.255.26 }
+        - { name: host1name, shortname: host1 , ip: 10.0.255.27 }
       ##when: inventory_hostname == "BACKEND01"
 
