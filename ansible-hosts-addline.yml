@@ -1,0 +1,14 @@
+- hosts: backendprod
+  tasks:
+    - name: Inserting a line after a pattern in Ansible example 
+      blockinfile:
+        path: /etc/hosts
+        block: |
+          {{ item.ip }} {{ item.name }} {{ item.shortname }}
+        marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.ip }}"
+      with_items:
+        - { name: host1name, shortname: host1, ip: 10.215.255.25 }
+        - { name: host1name, shortname: host1 , ip: 10.215.255.26 }
+        - { name: host1name, shortname: host1 , ip: 10.215.255.27 }
+      ##when: inventory_hostname == "BACKEND01"
+
